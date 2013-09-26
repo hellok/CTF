@@ -1,0 +1,16 @@
+<div class="page-header">
+	<h1>Note Listing</h1>
+</div>
+
+<h2><%= note_dir.to_html %></h2>
+<ul>
+	<% listing.to_a.sort.each do |name, type| %>
+		<li>
+			<% if type == :dir %>
+				<a href="/list/<%= note_dir.to_html %><%= name.to_html %>/"> <i class="icon-folder-open"></i> <%= name.to_html %></a>
+			<% elsif type == :note %>
+				<a href="/view/<%= note_dir.to_html %><%= name.to_html %>"> <i class="icon-file"></i> <%= name.to_html %></a>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

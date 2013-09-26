@@ -1,0 +1,53 @@
+<div class="page-heading">
+	<h1>Welcome <em><%= user.name.to_html %></em> to Cloud Notes</h1>
+</div>
+
+<div class="hero-unit">
+	<h1>Invite others to Cloud Notes</h1>
+	<p>Benefit from network effects by persuading all your colleagues, business partners, and friends to signup for Cloud Notes.</p>
+</div>
+
+<div class="row">
+	<div class="span8">
+		<h2>Create a note now!</h2>
+		<form action="/create" method="post">
+			<div class="control-group">
+				<label class="control-label">note name</label>
+				<div class="controls">
+					<input type="text" name="note_name" />
+					<span class="help-inline" style="font-family: monospace">/([A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+/</span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">note password</label>
+				<div class="controls">
+					<input type="password" name="note_password" />
+					<span class="help-inline">(optional) allow others to view this note</span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">note content</label>
+				<div class="controls">
+					<textarea class="input-xxlarge" rows="10" name="note_content"></textarea>
+				</div>
+			</div>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary" />create</button>
+			</div>
+		</form>
+	</div>
+	<div class="span4">
+		<h2>View your notes</h2>
+		<ul>
+			<% listing.to_a.sort.each do |name, type| %>
+				<li>
+					<% if type == :dir %>
+						<a href="/list/<%= note_dir.to_html %><%= name.to_html %>/"> <i class="icon-folder-open"></i> <%= name.to_html %></a>
+					<% elsif type == :note %>
+						<a href="/view/<%= note_dir.to_html %><%= name.to_html %>"> <i class="icon-file"></i> <%= name.to_html %></a>
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>

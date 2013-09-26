@@ -1,0 +1,8 @@
+    popa
+loop:
+    mov (%esi), %esi
+    mov 4(%esi), %eax
+    cmp $0x4100, %ax
+    jne loop
+    lea 8(%esi), %eax
+    jmp %edi

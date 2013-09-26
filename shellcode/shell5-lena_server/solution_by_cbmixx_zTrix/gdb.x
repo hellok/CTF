@@ -1,0 +1,10 @@
+set follow-fork-mode child
+#b *0x0804A8BA
+#b *0x080490f0
+#b *0x0804902b
+#b *0x080490af
+#b *0x08049097
+#b *0x08049dee
+b *0x08049f8a
+#b *0x0804a808
+run

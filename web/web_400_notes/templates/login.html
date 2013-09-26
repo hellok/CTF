@@ -1,0 +1,30 @@
+<div class="page-header">
+	<h1>Login</h1>
+</div>
+
+<% if request.post? %>
+	<div class="alert alert-error">
+		<strong>Error:</strong>
+		Login name and password must match to previously stored data.
+	</div>
+<% end %>
+
+<form action="" method="post" class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label">login name</label>
+		<div class="controls">
+			<input type="text" name="login_name" />
+			<span class="help-inline" style="font-family: monospace">/[A-Za-z0-9_-]+/</span>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">password</label>
+		<div class="controls">
+			<input type="password" name="password" />
+		</div>
+	</div>
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary" />login</button>
+	</div>
+</form>
+

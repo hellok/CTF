@@ -1,0 +1,18 @@
+typedef struct _llist {
+   struct _llist *next;
+   uint32_t tag;
+   char data[100];
+ llist;
+ 
+and:
+ 
+register char *answer;
+char *(*func)();
+llist *head;
+...
+func = (char *(*)(llist *))userBuf;
+answer = (char *)(*func)(head);
+send_string(answer);
+exit(0);
+ 
+Write me shellcode that traverses the randomly generated linked list, looking for a node with a tag 0x41414100, and returns a pointer to the data associated with that tag, such that the call to send_string will output the answer.

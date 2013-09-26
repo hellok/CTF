@@ -1,0 +1,17 @@
+<h1>Repository created</h1>
+<p>
+	Access your repository at:<br/>
+	<b><%= request.base_url.to_s.to_html %>/<%= repo_id.to_html %></b><br>
+	username: <b><%= repo_id.to_html %></b><br>
+	password: <b><%= password.to_html %></b>
+</p>
+<p>
+	e.g.:
+	<pre>git clone <%= request.base_url.to_s.to_html %>/<%= repo_id.to_html %>
+git push <%= request.base_url.to_s.to_html %>/<%= repo_id.to_html %> master
+git pull <%= request.base_url.to_s.to_html %>/<%= repo_id.to_html %></pre>
+</p>
+<p>
+	Pushs and pulls are limited to a size of <%= size_limit/1024.0 %>Kb.
+</p>
+

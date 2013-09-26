@@ -1,0 +1,10 @@
+    pop %edi
+loop:
+    pop %esi
+    mov (%esi), %eax
+    mov 4(%eax), %ebx
+    cmp $0x4100, %bx
+    push %eax
+    jne loop
+    add $8, %al
+    jmp %edi

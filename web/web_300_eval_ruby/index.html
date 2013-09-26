@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title>Ruby Eval</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+		<script src="jquery-1.9.1.min.js"></script>
+		<style type="text/css">
+			div.container {
+				margin-top: 60px;
+			}
+
+			div.box {
+				border-width: 1px;
+				border-color: black;
+				border-style: solid;
+				padding: 10px;
+			}
+		</style>
+		<script>
+			$(document).ready(function () {
+				$("#submit").click(function () {
+					$("#result").empty();
+					$("#result").text("waiting for result...");
+					source= $("#source").val();
+					$.post("eval", { "script" : source }, function(result) {
+						$("#result").empty();
+						$("#result").append("<pre></pre>");
+						$("#result pre").text(result);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-heading">
+				<h1>Ruby Eval</h1>
+			</div>
+
+			<div class="hero-unit">
+				<div class="row">
+					<div class="span6">
+						<h2>ruby source</h2>
+						<div class="box">
+							<textarea id="source" style="width: 400px" rows="20">puts "hello world!!!"
+
+10.times do |i|
+	puts i
+end
+
+puts 2**1000
+</textarea>
+							<button class="btn" id="submit">eval</button>
+						</div>
+					</div>
+					<div class="span4">
+						<h2>result</h2>
+						<div class="box" id="result">
+							get a result by pressing eval
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

