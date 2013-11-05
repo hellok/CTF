@@ -1,0 +1,9 @@
+What's wrong with this? (Category: Internals) Author(s): javex
+We managed to get this package of the robots servers. We managed to determine
+that it is some kind of compiled bytecode. But something is wrong with it. Our
+usual analysis failed - so we have to hand this over to you pros. We only know
+this: The program takes one parameter and it responds with "Yup" if you have
+found the secret code, with "Nope" else. We expect it should be obvious how to
+execute it.
+Here is the challenge:
+https://ctf.fluxfingers.net/static/downloads/whats_wrong/hello.tar.gz

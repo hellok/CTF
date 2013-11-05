@@ -1,0 +1,8 @@
+Robot Plans (Category: Internals) Author(s): DrunkenPanda
+We have captured a robot from behind, while he dropped some cooling liquid
+into the bushes. We tried to interrogate the robot, but he still refuses to
+speak. Luckily we could extract files from the android's communication module.
+Hopefully we get some information about the robots' motives, before every
+information is swiped away...
+Here is the challenge:
+https://ctf.fluxfingers.net/static/downloads/max_404/image.tar.gz

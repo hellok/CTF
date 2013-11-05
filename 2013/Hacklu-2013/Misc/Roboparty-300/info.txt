@@ -1,0 +1,9 @@
+Roboparty (Category: Misc) Author(s): audioPhil
+Robot LHCH is happy. He made it into the castings for the tenth roman musical.
+He even is so happy that he went on the Oktoberfest to drink some beer.
+Unfortunately it seems that he drank too much so now he is throwing up part of
+his source code. Can you decipher the secret he knows?
+Warning: Viewing this page is not recommended for people that suffer from
+epilepsy. We are dead serious.
+And here is your totally eye-friendly challenge:
+https://ctf.fluxfingers.net/static/downloads/roboparty/index.html

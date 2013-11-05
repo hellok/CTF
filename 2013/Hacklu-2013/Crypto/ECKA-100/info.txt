@@ -1,0 +1,9 @@
+ECKA (Category: Crypto) Author(s): asante
+We have discovered a robo-server using some strange key agreement. Looks like
+they combine two different ones. You have to figure out what they expect,
+connect to their service and get the password. It's absolutly urgent, we need
+it to shut down the robo-factory on our way to the Oktoberfest - otherwise we
+can not dare to get our Bavarian beers.
+
+Oh btw, the robots use AES-ECB for symmetric encryption. 
+Here is your challenge: ctf.fluxfingers.net:1330
